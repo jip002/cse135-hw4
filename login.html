@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form id="login">
+        <input name="username" type="text" placeholder="Please enter your username or email">
+        <br>
+        <input name="password" type="password" placeholder="Please enter your password">
+        <br>
+        <button type="submit">Login</button>
+    </form>
+    <style>
+        #login{
+            background-color: blue;
+            width:500px;
+            margin:auto;
+            align-items: center;
+        }
+    </style>
+    <script>
+        const formEl = document.querySelector('#login');
+        formEl.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const formData = new FormData(formEl);
+            const data = Object.fromEntries(formData);
+            console.log(JSON.stringify(data));
+        });
+    </script>
+</body>
+</html>
